@@ -198,7 +198,7 @@ class LocalScheduler(AbstractScheduler):
 
     def submit(self, job_id, experiment_name, experiment_dir, database_address):
         base_path = os.path.dirname(os.path.realpath(spearmint.__file__))
-        cmd = ('CUDA_VISIBLE_DEVICES=0; python %s/launcher.py --database-address %s --experiment-name %s --job-id %s' %
+        cmd = ('export CUDA_VISIBLE_DEVICES=0; python %s/launcher.py --database-address %s --experiment-name %s --job-id %s' %
                (base_path, database_address, experiment_name, job_id))
 
         output_directory = os.path.join(experiment_dir, 'output')

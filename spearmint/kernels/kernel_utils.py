@@ -184,7 +184,7 @@
 
 
 import numpy as np
-import scipy.weave
+import weave
 from scipy.spatial.distance import cdist
 
 def dist2(ls, x1, x2=None):
